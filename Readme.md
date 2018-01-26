@@ -1,11 +1,11 @@
 # Fallback Rivescript
 
-rive script fallback skill
+[rivescript](https://www.rivescript.com/) fallback skill
 
-classic [ELIZA](https://en.wikipedia.org/wiki/ELIZA) chatbot answers
+classic [ELIZA](https://en.wikipedia.org/wiki/ELIZA) chatbot answers + a few [collected around the web](https://github.com/ekt1701/Alexa-Chatter/tree/master/src/brain)
 
-edit/add rivescript files to brain/lang-code/ to extend functionality, please
-submit PRs if you do so
+
+edit/add rivescript files to brain/lang-code/ to extend functionality, please submit PRs if you do so
 
 # usage
 
