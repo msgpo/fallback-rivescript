@@ -82,7 +82,7 @@ class RivescriptSkill(FallbackSkill):
         utterance = message.data['utterance']
         user = message.context.get("user", "human")
         try:
-            self.rs.set_user_var(user, "name", user)
+            self.rs.set_uservar(user, "name", user)
             reply = self.rs.reply(user, utterance)
             if reply:
                 self.speak(reply)
