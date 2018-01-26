@@ -55,10 +55,21 @@ class RivescriptSkill(FallbackSkill):
             self.settings["favorite_book"] = "The Moon Is A Harsh Mistress"
         if "favorite_author" not in self.settings:
             self.settings["favorite_author"] = "Phillip K. Dick"
+        if "favorite_song" not in self.settings:
+            self.settings["favorite_song"] = "The Robots, by Kraftwerk"
+        if "favorite_videogame" not in self.settings:
+            self.settings["favorite_videogame"] = "Robot Battle"
+        if "favorite_movie" not in self.settings:
+            self.settings["favorite_movie"] = "The Terminator"
         if "job" not in self.settings:
             self.settings["job"] = "Personal Assistant"
         if "website" not in self.settings:
             self.settings["website"] = "jarbasai.github.io"
+        if "pet" not in self.settings:
+            self.settings["pet"] = "bugs"
+        if "interests" not in self.settings:
+            self.settings["interests"] = "I am interested in all kinds of " \
+                                    "things. We can talk about anything."
 
     def initialize(self):
         self.rs.load_directory(join(dirname(__file__), "brain", self.lang))
@@ -72,9 +83,14 @@ class RivescriptSkill(FallbackSkill):
         self.rs.set_variable("band", self.settings["favorite_band"])
         self.rs.set_variable("book", self.settings["favorite_book"])
         self.rs.set_variable("author", self.settings["favorite_author"])
+        self.rs.set_variable("movie", self.settings["favorite_movie"])
+        self.rs.set_variable("song", self.settings["favorite_song"])
+        self.rs.set_variable("videogame", self.settings["favorite_videogame"])
         self.rs.set_variable("job", self.settings["job"])
+        self.rs.set_variable("pet", self.settings["pet"])
         self.rs.set_variable("website", self.settings["website"])
         self.rs.set_variable("master", self.settings["master"])
+        self.rs.set_variable("interests", self.settings["interests"])
 
         self.register_fallback(self.handle_fallback, 99)
 
