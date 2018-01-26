@@ -24,7 +24,7 @@ class RivescriptSkill(FallbackSkill):
         self.rs.set_variable("name", name)
         if "mycroft" in name:
             self.rs.set_variable("fullname",
-                                 name + " son of None")
+                                 name + " the First")
         else:
             self.rs.set_variable("fullname",
                              name + " son of Mycroft")
@@ -44,7 +44,7 @@ class RivescriptSkill(FallbackSkill):
         if "eye_color" not in self.settings:
             self.settings["eye_color"] = "blue"
         if "hair" not in self.settings:
-            self.settings["hair"] = "None"
+            self.settings["hair"] = "no"
         if "hair_length" not in self.settings:
             self.settings["hair_length"] = "bald"
         if "favorite_color" not in self.settings:
