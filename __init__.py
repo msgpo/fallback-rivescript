@@ -76,7 +76,7 @@ class RivescriptSkill(FallbackSkill):
         self.rs.set_variable("website", self.settings["website"])
         self.rs.set_variable("master", self.settings["master"])
 
-        self.register_fallback(self.handle_fallback, 90)
+        self.register_fallback(self.handle_fallback, 99)
 
     def handle_fallback(self, message):
         utterance = message.data['utterance']
