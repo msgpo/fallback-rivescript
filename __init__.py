@@ -17,23 +17,6 @@ class RivescriptSkill(FallbackSkill):
         super(RivescriptSkill, self).__init__()
         self.rs = RiveScript()
 
-        # set personal bot info
-        name = self.config_core.get("listener", {}).get("wake_word",
-                                                        "mycroft")
-        name = name.lower().replace("hey ", "")
-        self.rs.set_variable("name", name)
-        if "mycroft" in name:
-            self.rs.set_variable("fullname",
-                                 name + " the First")
-        else:
-            self.rs.set_variable("fullname",
-                             name + " son of Mycroft")
-        self.rs.set_variable("age", str(date.today().year - 2016))
-        self.rs.set_variable("location",
-                             self.location["city"]["state"]["country"][
-                                 "name"])
-        self.rs.set_variable("city", self.location_pretty)
-
         # secondary personal bot info
         if "birthday" not in self.settings:
             self.settings["birthday"] = "May 23, 2016"
@@ -91,8 +74,24 @@ class RivescriptSkill(FallbackSkill):
         self.rs.set_variable("website", self.settings["website"])
         self.rs.set_variable("master", self.settings["master"])
         self.rs.set_variable("interests", self.settings["interests"])
+        # set personal bot info
+        name = self.config_core.get("listener", {}).get("wake_word",
+                                                        "mycroft")
+        name = name.lower().replace("hey ", "")
+        self.rs.set_variable("name", name)
+        if "mycroft" in name:
+            self.rs.set_variable("fullname",
+                                 name + " the First")
+        else:
+            self.rs.set_variable("fullname",
+                                 name + " son of Mycroft")
+        self.rs.set_variable("age", str(date.today().year - 2016))
+        self.rs.set_variable("location",
+                             self.location["city"]["state"]["country"][
+                                 "name"])
+        self.rs.set_variable("city", self.location_pretty)
 
-        self.register_fallback(self.handle_fallback, 99)
+        self.register_fallback(self.handle_fallback, 98)
 
     def handle_fallback(self, message):
         utterance = message.data['utterance']
