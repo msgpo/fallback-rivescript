@@ -2,19 +2,6 @@
 
 + what [else] do you (know|think)
 - I though of this poem: <call>haiku</call> What did you think of it?
-- I like this quote. <call>function randomQuote</call> That was a good quote.
-- Here is something I learned about science. <call>newsreader newsRSS https://rss.sciencedaily.com/top.xml 1 off </call>  I like science news.
-- In national news. <call>newsreader newsRSS http://feeds.reuters.com/reuters/topNews 1 off </call> I keep up with the news.
-- I heard this will be the next space launch. <call>function spaceLaunch</call> Space above and beyond.
-- I know how many people in space right now. <call>function spacePeople</call> woo hoo
-- I learned this word <call>newsreader newsRSS http://feeds.feedburner.com/wordthink/vIYJ?format=xml 1 on </call>   See I'm getting smarter all the time
-- knock knock
-- Can you unlock this life's mystery. <call>function imponderables</call> So what is the answer?
-- Here is a totally random fact. <call>function randomFacts</call>  Did you know that?
-- <call>function randomJoke</call> Ha Ha
-- Maybe this will inspire you. <call>function inspireMe</call> Were you inspired?
-- I had this thought. <call>newsreader reddit Showerthoughts 1 </call> Interesting thought, I'd say.
-- I know a six word short story, here it is. <call>newsreader reddit sixwordstories 1 </call> Can you make a six word story?
 - <call>proverbs Wisdom 6 40</call>
 - <call>proverbs Life 3 45</call>
 - <call>proverbs Work 27 4</call>
@@ -81,7 +68,7 @@
     response = urllib2.urlopen(req)
     info = dict(json.loads(response.read()))
     text = info["proverbs"][idx][topic][number]
-    proverbs ="Here is a proverb regarding "+topic+". "+ text + " <break time='1s'/> That is an oldie but goodie."
+    proverbs ="Here is a proverb regarding "+topic+". "+ text
     return proverbs
 
 < object
